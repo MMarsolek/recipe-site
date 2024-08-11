@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 237, 227, 233;
+  --background-start-rgb: 235, 195, 219;
+  --background-end-rgb: 230, 228, 206;
+  --font-color:192, 155, 216;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 237, 227, 233;
+    --background-start-rgb: 235, 195, 219;
+    --background-end-rgb: 230, 228, 206;
+    --font-color:192, 155, 216;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--font-color);
   background: linear-gradient(
       to bottom,
       transparent,
@@ -25,9 +28,24 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+h1{
+  font-size: large;
+}
+.navbar_logo{
+  width:75px;
+  animation: rotation 6s infinite linear;
+}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
